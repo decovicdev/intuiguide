@@ -1,7 +1,8 @@
-import { Box, Circle, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+import { Box, Circle, Fade, VStack, Wrap, WrapItem } from '@chakra-ui/react';
 
 import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 import Container from '../shared/Container';
+import FadeIn from '../shared/FadeIn';
 import Image from '../shared/Image';
 import { Body1, Heading, Title } from '../shared/typography';
 
@@ -38,33 +39,35 @@ const Section2: React.FC<Section2Props> = (props) => {
       pt='180px'
     >
       <Container>
-        <Wrap justify='space-between'>
-          {points.map((point) => {
-            return (
-              <WrapItem key={point.title}>
-                <VStack spacing='8' p='4' maxW='360px'>
-                  <Circle size='100px' bg='secondary'>
-                    <Image
-                      src={fixSrcWithBasePath(point.icon)}
-                      alt={point.title}
-                    />
-                  </Circle>
-                  <Title textAlign='center'>{point.title}</Title>
-                  <Body1 textAlign='center' color='gray.400'>
-                    {point.description}
-                  </Body1>
-                </VStack>
-              </WrapItem>
-            );
-          })}
-        </Wrap>
-        <VStack mt='20' spacing='8' pb='180px'>
-          <Heading>Easy exploration, right at your fingertips.</Heading>
-          <Body1 color='gray.400' maxW='770px' textAlign='center'>
-            Trip planning is easier with Intuiguide. Navigate new cities, towns,
-            and tourist hotspots in your own unique way.
-          </Body1>
-        </VStack>
+        <FadeIn>
+          <Wrap justify='space-between'>
+            {points.map((point) => {
+              return (
+                <WrapItem key={point.title}>
+                  <VStack spacing='8' p='4' maxW='360px'>
+                    <Circle size='100px' bg='secondary'>
+                      <Image
+                        src={fixSrcWithBasePath(point.icon)}
+                        alt={point.title}
+                      />
+                    </Circle>
+                    <Title textAlign='center'>{point.title}</Title>
+                    <Body1 textAlign='center' color='gray.400'>
+                      {point.description}
+                    </Body1>
+                  </VStack>
+                </WrapItem>
+              );
+            })}
+          </Wrap>
+          <VStack mt='20' spacing='8' pb='180px'>
+            <Heading>Easy exploration, right at your fingertips.</Heading>
+            <Body1 color='gray.400' maxW='770px' textAlign='center'>
+              Trip planning is easier with Intuiguide. Navigate new cities,
+              towns, and tourist hotspots in your own unique way.
+            </Body1>
+          </VStack>
+        </FadeIn>
       </Container>
     </Box>
   );

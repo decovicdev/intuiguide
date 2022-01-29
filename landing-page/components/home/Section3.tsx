@@ -1,9 +1,8 @@
 import { Divider, HStack, VStack, Wrap, WrapItem } from '@chakra-ui/react';
 import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
-import Container from '../shared/Container';
+import FadeIn from '../shared/FadeIn';
 
 import Image from '../shared/Image';
-import Stack from '../shared/Stack';
 import { Body2 } from '../shared/typography';
 
 const places = [
@@ -43,23 +42,25 @@ const Section3: React.FC<Section3Props> = (props) => {
 
         return (
           <WrapItem key={place.name}>
-            <VStack
-              align='stretch'
-              py='4'
-              transform={['', '', '', transform]}
-              textAlign='center'
-              bgImage={`url('${fixSrcWithBasePath(place.image)}')`}
-              bgSize='cover'
-              bgRepeat='no-repeat'
-              boxSize='320px'
-              borderRadius='3xl'
-            >
-              <HStack px='4'>
-                <Image src={fixSrcWithBasePath(place.map)} alt={place.name} />
-                <Body2 color='white'>{place.name}</Body2>
-              </HStack>
-              <Divider />
-            </VStack>
+            <FadeIn delay={index * 0.5} duration={1}>
+              <VStack
+                align='stretch'
+                py='4'
+                transform={['', '', '', transform]}
+                textAlign='center'
+                bgImage={`url('${fixSrcWithBasePath(place.image)}')`}
+                bgSize='cover'
+                bgRepeat='no-repeat'
+                boxSize='320px'
+                borderRadius='3xl'
+              >
+                <HStack px='4'>
+                  <Image src={fixSrcWithBasePath(place.map)} alt={place.name} />
+                  <Body2 color='white'>{place.name}</Body2>
+                </HStack>
+                <Divider />
+              </VStack>
+            </FadeIn>
           </WrapItem>
         );
       })}
