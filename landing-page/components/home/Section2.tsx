@@ -1,18 +1,9 @@
-import {
-  Box,
-  Circle,
-  Divider,
-  HStack,
-  StackDivider,
-  VStack,
-  Wrap,
-  WrapItem,
-} from '@chakra-ui/react';
+import { Box, Circle, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+
 import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 import Container from '../shared/Container';
 import Image from '../shared/Image';
-import Stack from '../shared/Stack';
-import { Body1, Body2, Heading, Title } from '../shared/typography';
+import { Body1, Heading, Title } from '../shared/typography';
 
 const points = [
   {
@@ -41,7 +32,7 @@ const Section2: React.FC<Section2Props> = (props) => {
   return (
     <Box
       minH={980}
-      bgImage="url('/images/background.png')"
+      bgImage={`url('${fixSrcWithBasePath('/images/background.png')}')`}
       bgRepeat='no-repeat'
       bgSize='cover'
       pt='180px'
