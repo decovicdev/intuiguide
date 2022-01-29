@@ -6,5 +6,4 @@ const Button = chakra(ChakraButton, {
   },
 });
 
-export { ButtonProps };
 export default Button;

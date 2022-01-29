@@ -1,4 +1,6 @@
-import Button, { ButtonProps } from '../shared/button/Button';
+import { ButtonProps } from '@chakra-ui/react';
+
+import Button from '../shared/button/Button';
 
 const AuthProviderButton: React.FC<ButtonProps> = (props) => {
   return (
