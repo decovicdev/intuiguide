@@ -1,24 +1,28 @@
-import { Box, HStack, VStack } from '@chakra-ui/react';
-import React from 'react';
+import { Box, VStack } from '@chakra-ui/react';
+
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 import AppDownloadLinks from './AppDownloadLinks';
 import Container from './Container';
 import Image from './Image';
-import ImageClipPath from './ImageClipPath';
+import { HeroBgClipPath } from './ImageClipPath';
 import Stack from './Stack';
 import { Body1, LargeHeading } from './typography';
+
+const bg = `linear-gradient(to bottom right, rgba(255,255,255,.9),rgba(255,255,255,.1)), url('${fixSrcWithBasePath(
+  '/images/auth-bg.png'
+)}')"
+backgroundRepeat='no-repeat'
+backgroundSize='cover'
+clipPath='url(#clipPath)`;
 
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = (props) => {
   return (
-    <Box
-      minH={1000}
-      background="linear-gradient(to bottom right, rgba(255,255,255,.9),rgba(255,255,255,.1)), url('/images/auth-bg.png')"
-      backgroundRepeat='no-repeat'
-      backgroundSize='cover'
-      clipPath='url(#clipPath)'
-    >
-      <ImageClipPath />
+    <Box minH={1000} background={bg}>
+      <Box pos='absolute'>
+        <HeroBgClipPath />
+      </Box>
       <Container pt={['20', '200px']}>
         <Stack justify='space-evenly'>
           <VStack
@@ -33,7 +37,10 @@ const Hero: React.FC<HeroProps> = (props) => {
             </Body1>
             <AppDownloadLinks />
           </VStack>
-          <Image src='/images/map-screen.png' alt='hero' />
+          <Image
+            src={fixSrcWithBasePath('/images/map-screen.png')}
+            alt='hero'
+          />
         </Stack>
       </Container>
     </Box>

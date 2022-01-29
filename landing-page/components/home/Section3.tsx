@@ -1,4 +1,5 @@
 import { Divider, HStack, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 import Container from '../shared/Container';
 
 import Image from '../shared/Image';
@@ -47,14 +48,14 @@ const Section3: React.FC<Section3Props> = (props) => {
               py='4'
               transform={['', '', '', transform]}
               textAlign='center'
-              bgImage={`url('${place.image}')`}
+              bgImage={`url('${fixSrcWithBasePath(place.image)}')`}
               bgSize='cover'
               bgRepeat='no-repeat'
               boxSize='320px'
               borderRadius='3xl'
             >
               <HStack px='4'>
-                <Image src={place.map} alt={place.name} />
+                <Image src={fixSrcWithBasePath(place.map)} alt={place.name} />
                 <Body2 color='white'>{place.name}</Body2>
               </HStack>
               <Divider />

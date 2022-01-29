@@ -1,4 +1,5 @@
-import { HStack, Spacer, VStack } from '@chakra-ui/react';
+import { Spacer, VStack } from '@chakra-ui/react';
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 
 import AppDownloadLinks from '../shared/AppDownloadLinks';
 import Container from '../shared/Container';
@@ -34,7 +35,7 @@ const Section5: React.FC<Section5Props> = (props) => {
             base: '0',
             xl: '5%',
           }}
-          src='/images/splash-screen.png'
+          src={fixSrcWithBasePath('/images/splash-screen.png')}
           alt='Splash screen'
         />
         <Spacer />

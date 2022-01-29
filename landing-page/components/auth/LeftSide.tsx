@@ -1,10 +1,12 @@
 import { Box } from '@chakra-ui/react';
+
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 import { AuthBgClipPath } from '../shared/ImageClipPath';
 
 const LeftSide: React.FC = (props) => {
   return (
     <Box
-      bg='url(/images/auth-bg.png) no-repeat '
+      bg={`url(${fixSrcWithBasePath('/images/auth-bg.png')}) no-repeat `}
       bgColor='white'
       h={{
         base: '250px',

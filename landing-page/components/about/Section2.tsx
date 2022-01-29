@@ -1,5 +1,6 @@
 import { Container, VStack } from '@chakra-ui/react';
-import React from 'react';
+
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 import Image from '../shared/Image';
 import Stack from '../shared/Stack';
 import { Body1, Heading } from '../shared/typography';
@@ -42,7 +43,7 @@ const Section2: React.FC<Section2Props> = (props) => {
             <br />
           </Body1>
         </VStack>
-        <Image src='/images/water.png' alt='water' />
+        <Image src={fixSrcWithBasePath('/images/water.png')} alt='water' />
       </Stack>
     </Container>
   );

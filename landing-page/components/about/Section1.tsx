@@ -1,5 +1,6 @@
 import { VStack } from '@chakra-ui/react';
-import React from 'react';
+
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 import Container from '../shared/Container';
 import Image from '../shared/Image';
 import { LargeHeading, Title } from '../shared/typography';
@@ -20,7 +21,7 @@ const Section1: React.FC<Section1Props> = (props) => {
         </Title>
         <Image
           borderRadius='2xl'
-          src='/images/wilderness.png'
+          src={fixSrcWithBasePath('/images/wilderness.png')}
           alt='wilderness'
         />
       </VStack>
