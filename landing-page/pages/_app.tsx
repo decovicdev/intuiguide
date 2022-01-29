@@ -12,6 +12,7 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import Head from 'next/head';
 
 import Layout from '../components/shared/Layout';
 import theme from '../config/theme';
@@ -20,6 +21,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Layout>
+        <Head>
+          <title>intuiguide</title>
+        </Head>
         <Component {...pageProps} />
       </Layout>
     </ChakraProvider>

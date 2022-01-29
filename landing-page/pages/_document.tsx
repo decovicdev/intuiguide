@@ -44,6 +44,7 @@ class MyDocument extends Document {
           <meta name='application-name' content='Intuiguide' />
           <meta name='msapplication-TileColor' content='#da532c' />
           <meta name='theme-color' content='#00bdbb' />
+          <meta name='description' content='Intuiguide' />
         </Head>
         <body>
           <Main />
