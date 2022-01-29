@@ -12,6 +12,7 @@ const Logo: React.FC<LogoProps> = (props) => {
         w={['122px', '218px']}
         src={fixSrcWithBasePath('/images/logo.png')}
         alt='logo'
+        loading='eager'
       />
     </Link>
   );
