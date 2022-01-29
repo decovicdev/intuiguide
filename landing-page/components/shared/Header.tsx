@@ -1,8 +1,9 @@
-import { Box, HStack, Link } from '@chakra-ui/react';
+import { Box, HStack } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
 import PrimaryButton from './button/PrimaryButton';
 import Container from './Container';
+import Link from './Link';
 import Logo from './Logo';
 
 interface HeaderProps {}
