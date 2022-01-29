@@ -1,4 +1,4 @@
-const fixSrcWithBasePath = (src: string) => {
+const fixSrcWithBasePath = (src: string | undefined) => {
   if (process.env.NEXT_PUBLIC_BASE_PATH) {
     return process.env.NEXT_PUBLIC_BASE_PATH + src;
   }

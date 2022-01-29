@@ -1,4 +1,5 @@
 import { Box, Divider, HStack, VStack } from '@chakra-ui/react';
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 
 import PrimaryButton from '../shared/button/PrimaryButton';
 import Image from '../shared/Image';
@@ -28,13 +29,23 @@ const LoginForm: React.FC = () => {
         </HStack>
         <Stack spacing='0'>
           <AuthProviderButton
-            leftIcon={<Image src='/images/google.png' alt='google icon' />}
+            leftIcon={
+              <Image
+                src={fixSrcWithBasePath('/images/google.png')}
+                alt='google icon'
+              />
+            }
           >
             Google
           </AuthProviderButton>
 
           <AuthProviderButton
-            leftIcon={<Image src='/images/facebook.png' alt='facebook icon' />}
+            leftIcon={
+              <Image
+                src={fixSrcWithBasePath('/images/facebook.png')}
+                alt='facebook icon'
+              />
+            }
           >
             Facebook
           </AuthProviderButton>

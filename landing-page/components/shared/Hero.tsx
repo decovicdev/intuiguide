@@ -10,16 +10,19 @@ import { Body1, LargeHeading } from './typography';
 
 const bg = `linear-gradient(to bottom right, rgba(255,255,255,.9),rgba(255,255,255,.1)), url('${fixSrcWithBasePath(
   '/images/auth-bg.png'
-)}')"
-backgroundRepeat='no-repeat'
-backgroundSize='cover'
-clipPath='url(#clipPath)`;
+)}')`;
 
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = (props) => {
   return (
-    <Box minH={1000} background={bg}>
+    <Box
+      minH={1000}
+      background={bg}
+      clipPath='url(#clipPath)'
+      backgroundRepeat='no-repeat'
+      backgroundSize='cover'
+    >
       <Box pos='absolute'>
         <HeroBgClipPath />
       </Box>

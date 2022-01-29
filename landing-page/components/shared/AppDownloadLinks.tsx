@@ -11,13 +11,13 @@ const AppDownloadLinks: React.FC<AppDownloadLinksProps> = (props) => {
     <HStack spacing='4'>
       <Link>
         <Image
-          src={fixSrcWithBasePath('images/app-store.png')}
+          src={fixSrcWithBasePath('/images/app-store.png')}
           alt='App store'
         />
       </Link>
       <Link>
         <Image
-          src={fixSrcWithBasePath('images/google-play.png')}
+          src={fixSrcWithBasePath('/images/google-play.png')}
           alt='Google play'
         />
       </Link>

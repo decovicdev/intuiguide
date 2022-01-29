@@ -10,7 +10,7 @@ const Logo: React.FC<LogoProps> = (props) => {
       <Image
         h={['28px', '52px']}
         w={['122px', '218px']}
-        src={fixSrcWithBasePath('images/logo.png')}
+        src={fixSrcWithBasePath('/images/logo.png')}
         alt='logo'
       />
     </Link>
