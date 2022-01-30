@@ -40,6 +40,24 @@ class MyDocument extends Document {
             href={fixSrcWithBasePath('/safari-pinned-tab.svg')}
             color='#5bbad5'
           />
+          <link
+            rel='preload'
+            href={fixSrcWithBasePath('/images/bg.png')}
+            as='image'
+          />
+          <link
+            rel='preload'
+            href={fixSrcWithBasePath('/images/map-screen.png')}
+            as='image'
+          />
+          <link
+            rel='preconnect'
+            href='https://decovicdev.github.io/intuiguide/'
+          />
+          <link
+            rel='dns-prefetch'
+            href='https://decovicdev.github.io/intuiguide/'
+          />
           <meta name='apple-mobile-web-app-title' content='Intuiguide' />
           <meta name='application-name' content='Intuiguide' />
           <meta name='msapplication-TileColor' content='#da532c' />

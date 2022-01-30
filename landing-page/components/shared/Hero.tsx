@@ -10,7 +10,7 @@ import Stack from './Stack';
 import { Body1, LargeHeading } from './typography';
 
 const bg = `linear-gradient(to bottom right, rgba(255,255,255,.9),rgba(255,255,255,.1)), url('${fixSrcWithBasePath(
-  '/images/auth-bg.png'
+  '/images/bg.png'
 )}')`;
 
 interface HeroProps {}
