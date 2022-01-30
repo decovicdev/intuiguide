@@ -45,11 +45,7 @@ class MyDocument extends Document {
             href={fixSrcWithBasePath('/images/bg.png')}
             as='image'
           />
-          <link
-            rel='preload'
-            href={fixSrcWithBasePath('/images/map-screen.png')}
-            as='image'
-          />
+
           <link rel='preconnect' href='https://decovicdev.github.io' />
           <link rel='dns-prefetch' href='https://decovicdev.github.io' />
           <meta name='apple-mobile-web-app-title' content='Intuiguide' />
