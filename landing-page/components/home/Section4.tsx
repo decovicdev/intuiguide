@@ -25,10 +25,7 @@ const Section4: React.FC<Section4Props> = (props) => {
               your ETA.
             </Body1>
           </VStack>
-          <Image
-            src={fixSrcWithBasePath('/images/tourist.png')}
-            alt='Tourist'
-          />
+          <Image src='/images/tourist.png' alt='Tourist' />
         </Stack>
       </FadeIn>
     </Container>

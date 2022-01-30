@@ -46,10 +46,7 @@ const Section2: React.FC<Section2Props> = (props) => {
                 <WrapItem key={point.title}>
                   <VStack spacing='8' p='4' maxW='360px'>
                     <Circle size='100px' bg='secondary'>
-                      <Image
-                        src={fixSrcWithBasePath(point.icon)}
-                        alt={point.title}
-                      />
+                      <Image src={point.icon} alt={point.title} />
                     </Circle>
                     <Title textAlign='center'>{point.title}</Title>
                     <Body1 textAlign='center' color='gray.400'>

@@ -13,20 +13,20 @@ interface Section5Props {}
 const Section5: React.FC<Section5Props> = (props) => {
   return (
     <Container color='white' mt='12' minH='725px'>
-      <FadeIn>
-        <Stack
-          p='4'
-          pb='0'
-          bg='secondary'
-          minH='550px'
-          pos='relative'
-          borderRadius='3xl'
-          flexDirection={{
-            base: 'column-reverse',
-            xl: 'row',
-          }}
-          alignItems='center'
-        >
+      <Stack
+        p='4'
+        pb='0'
+        bg='secondary'
+        minH='550px'
+        pos='relative'
+        borderRadius='3xl'
+        flexDirection={{
+          base: 'column-reverse',
+          xl: 'row',
+        }}
+        alignItems='center'
+      >
+        <FadeIn>
           <Image
             pos={{
               base: 'relative',
@@ -37,10 +37,13 @@ const Section5: React.FC<Section5Props> = (props) => {
               base: '0',
               xl: '5%',
             }}
-            src={fixSrcWithBasePath('/images/splash-screen.png')}
+            src='/images/splash-screen.png'
             alt='Splash screen'
           />
-          <Spacer />
+        </FadeIn>
+
+        <Spacer />
+        <FadeIn>
           <VStack maxW='480px' spacing='8' align='flex-start'>
             <Heading>
               The world is yours to explore – ready to take the wheel?
@@ -51,9 +54,9 @@ const Section5: React.FC<Section5Props> = (props) => {
             </Body1>
             <AppDownloadLinks />
           </VStack>
-          <Spacer flex={0.2} />
-        </Stack>
-      </FadeIn>
+        </FadeIn>
+        <Spacer flex={0.2} />
+      </Stack>
     </Container>
   );
 };

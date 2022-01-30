@@ -1,7 +1,11 @@
 import { ImageProps, Image as ChakraImage } from '@chakra-ui/react';
+import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 
 const Image: React.FC<ImageProps> = (props) => {
-  let { w, h, loading = 'lazy', ...rest } = props;
+  let { w, h, loading = 'lazy', src, ...rest } = props;
+
+  src = fixSrcWithBasePath(src);
+
   if (typeof w === 'number') {
     w = `${w}px`;
   }
@@ -9,6 +13,6 @@ const Image: React.FC<ImageProps> = (props) => {
     h = `${h}px`;
   }
 
-  return <ChakraImage loading={loading} {...rest} w={w} h={h} />;
+  return <ChakraImage loading={loading} src={src} {...rest} w={w} h={h} />;
 };
 export default Image;

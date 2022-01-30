@@ -23,7 +23,7 @@ const Section1: React.FC<Section1Props> = (props) => {
           </Title>
           <Image
             borderRadius='2xl'
-            src={fixSrcWithBasePath('/images/wilderness.png')}
+            src='/images/wilderness.jpeg'
             alt='wilderness'
             loading='eager'
           />

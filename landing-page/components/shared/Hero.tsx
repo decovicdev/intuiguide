@@ -42,11 +42,7 @@ const Hero: React.FC<HeroProps> = (props) => {
               </Body1>
               <AppDownloadLinks />
             </VStack>
-            <Image
-              src={fixSrcWithBasePath('/images/map-screen.png')}
-              alt='hero'
-              loading='eager'
-            />
+            <Image src='/images/map-screen.png' alt='hero' loading='eager' />
           </Stack>
         </Container>
       </Box>

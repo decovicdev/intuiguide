@@ -14,7 +14,7 @@ const Section1: React.FC<Section1Props> = (props) => {
     <Container my='12'>
       <FadeIn>
         <Stack spacing='12' alignItems='center' justify='center'>
-          <Image src={fixSrcWithBasePath('/images/map.png')} alt='Map' />
+          <Image src='/images/map.png' alt='Map' />
           <VStack maxW='470px'>
             <Heading>Start your journey and we’ll do the rest…</Heading>
             <Body1 color='gray.400'>

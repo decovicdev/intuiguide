@@ -45,7 +45,7 @@ const Section2: React.FC<Section2Props> = (props) => {
               <br />
             </Body1>
           </VStack>
-          <Image src={fixSrcWithBasePath('/images/water.png')} alt='water' />
+          <Image src='/images/water.png' alt='water' />
         </Stack>
       </FadeIn>
     </Container>
