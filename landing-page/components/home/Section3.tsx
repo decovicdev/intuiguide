@@ -33,7 +33,7 @@ const Section3: React.FC<Section3Props> = (props) => {
       alignItems='center'
       justify='center'
       mt='-150px'
-      overflow='hidden'
+      overflowX='hidden'
     >
       {places.map((place, index) => {
         const isOdd = index % 2 === 0;
