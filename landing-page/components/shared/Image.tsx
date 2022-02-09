@@ -1,4 +1,5 @@
 import { ImageProps, Image as ChakraImage } from '@chakra-ui/react';
+
 import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 
 const Image: React.FC<ImageProps> = (props) => {

@@ -52,7 +52,7 @@ const Section3: React.FC<Section3Props> = (props) => {
                 boxSize='320px'
                 borderRadius='3xl'
               >
-                <HStack px='4'>
+                <HStack px='4' mb='4'>
                   <Image src={place.map} alt={place.name} />
                   <Body2 color='white'>{place.name}</Body2>
                 </HStack>

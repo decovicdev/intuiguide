@@ -10,7 +10,7 @@ import Section5 from '../components/home/Section5';
 
 const Home: NextPage = () => {
   return (
-    <Box>
+    <Box overflowX='hidden'>
       <Hero />
       <Section1 />
       <Section2 />

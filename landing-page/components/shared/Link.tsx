@@ -4,10 +4,17 @@ import NextLink from 'next/link';
 import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
 
 const Link: React.FC<LinkProps> = (props) => {
-  const { href, ...rest } = props;
+  let { href, ...rest } = props;
+
+  href = fixSrcWithBasePath(href);
 
   return (
-    <NextLink href={fixSrcWithBasePath(href)} passHref>
+    <NextLink
+      href={{
+        pathname: href,
+      }}
+      passHref
+    >
       <ChakraLink fontWeight={600} {...rest} />
     </NextLink>
   );
