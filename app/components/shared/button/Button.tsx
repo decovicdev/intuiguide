@@ -1,15 +1,16 @@
-import React from 'react';
-import styled from '@emotion/native';
-import { Pressable, PressableProps, StyleProp, ViewStyle } from 'react-native';
+import React from "react";
+import styled from "@emotion/native";
+import { Pressable, PressableProps, StyleProp, ViewStyle } from "react-native";
 
-import withBg from '../../../hoc/withBg';
-import withBorder from '../../../hoc/withBorder';
-import withFlex from '../../../hoc/withFlex';
-import withPosition from '../../../hoc/withPosition';
-import withSize from '../../../hoc/withSize';
-import withSpacing from '../../../hoc/withSpacing';
+import withBg from "../../../hoc/withBg";
+import withBorder from "../../../hoc/withBorder";
+import withFlex from "../../../hoc/withFlex";
+import withPosition from "../../../hoc/withPosition";
+import withSize from "../../../hoc/withSize";
+import withSpacing from "../../../hoc/withSpacing";
+import withShadow from "../../../hoc/withShadow";
 
-export interface ButtonProps extends Omit<PressableProps, 'style'> {
+export interface ButtonProps extends Omit<PressableProps, "style"> {
   style?: StyleProp<ViewStyle>;
 }
 const Button = withBg(
@@ -17,21 +18,23 @@ const Button = withBg(
     withSize(
       withFlex(
         withBorder(
-          withPosition(
-            styled((props: ButtonProps) => {
-              const { style, ...rest } = props;
-              return (
-                <Pressable
-                  style={({ pressed }) => [
-                    style,
-                    {
-                      opacity: pressed || props.disabled ? 0.3 : 1,
-                    },
-                  ]}
-                  {...rest}
-                />
-              );
-            })({})
+          withShadow(
+            withPosition(
+              styled((props: ButtonProps) => {
+                const { style, ...rest } = props;
+                return (
+                  <Pressable
+                    style={({ pressed }) => [
+                      style,
+                      {
+                        opacity: pressed || props.disabled ? 0.3 : 1,
+                      },
+                    ]}
+                    {...rest}
+                  />
+                );
+              })({})
+            )
           )
         )
       )

@@ -1,11 +1,11 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Fonts, Sizes } from '../../../constants/Styles';
-import { useThemeColors } from '../../../hooks/useThemeColor';
-import Card from '../Card';
-import Text from '../Text';
-import View from '../View';
-import Input from './Input';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { Fonts, Sizes } from "../../../constants/Styles";
+import { useThemeColors } from "../../../hooks/useThemeColor";
+import Card from "../Card";
+import Text from "../Text";
+import View from "../View";
+import Input from "./Input";
 
 const { s, m } = Sizes.spacing;
 
@@ -27,24 +27,24 @@ const FormField: React.FC<FormFieldProps> = ({
   const { card, text } = useThemeColors();
   return (
     <Card
-      bg='#F5F5F5'
+      bg="#F5F5F5"
       isRound
-      mb='m'
-      direction='row'
-      align='center'
-      p='m'
-      px='l'
+      mb="m"
+      direction="row"
+      align="center"
+      p="m"
+      px="l"
       {...containerProps}
     >
       {leftIcon}
       <Input
-        ml={leftIcon ? 'm' : undefined}
-        mr={rightIcon ? 'm' : undefined}
-        {...props}
+        ml={leftIcon ? "m" : 0}
+        mr={rightIcon ? "m" : 0}
         fontSize={14}
-        fontWeight={props.value?.length ? '500' : '400'}
+        fontWeight="400"
         flex={1}
-        placeholderTextColor='gray'
+        placeholderTextColor="gray"
+        {...props}
       />
       {rightIcon}
     </Card>

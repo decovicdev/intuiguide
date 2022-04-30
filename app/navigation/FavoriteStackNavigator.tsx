@@ -1,18 +1,21 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { createStackNavigator, TransitionSpecs } from "@react-navigation/stack";
 
 import {
   FavoriteStackParamList,
   RootTabScreenProps,
-} from '../types/navigation';
-import Favorite from '../screens/favorite/Favorite';
-import { useHideBottomTabListener } from '../hooks/useHideBottomTab';
-import EditFavorite from '../screens/favorite/EditFavorite';
+} from "../types/navigation";
+import Favorite from "../screens/favorite/Favorite";
+import { useHideBottomTabListener } from "../hooks/useHideBottomTab";
+import EditFavorite from "../screens/favorite/EditFavorite";
+import Layout from "../constants/Layout";
 
-const Stack = createNativeStackNavigator<FavoriteStackParamList>();
+const { height } = Layout.window;
+
+const Stack = createStackNavigator<FavoriteStackParamList>();
 
 interface FavoriteStackNavigatorProps
-  extends RootTabScreenProps<'FavoritesStack'> {}
+  extends RootTabScreenProps<"FavoritesStack"> {}
 
 const FavoriteStackNavigator: React.FC<FavoriteStackNavigatorProps> = (
   props
@@ -23,23 +26,33 @@ const FavoriteStackNavigator: React.FC<FavoriteStackNavigatorProps> = (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        animation: 'slide_from_bottom',
+        gestureEnabled: true,
+        gestureDirection: "vertical",
+        presentation: "modal",
+        transitionSpec: {
+          open: TransitionSpecs.TransitionIOSSpec,
+          close: TransitionSpecs.TransitionIOSSpec,
+        },
+        cardStyle: {
+          backgroundColor: "transparent",
+        },
       }}
       screenListeners={(props) => ({
         state: () => {
-          if (props.route.name !== 'Favorite') {
+          if (props.route.name !== "Favorite") {
             return useHideBottomTabListener(navigation, false);
           }
           useHideBottomTabListener(navigation, true);
         },
       })}
     >
-      <Stack.Screen name='Favorite' component={Favorite} />
+      <Stack.Screen name="Favorite" component={Favorite} />
       <Stack.Screen
         options={{
-          presentation: 'transparentModal',
+          presentation: "transparentModal",
+          gestureResponseDistance: height * 0.6,
         }}
-        name='EditFavorite'
+        name="EditFavorite"
         component={EditFavorite}
       />
     </Stack.Navigator>

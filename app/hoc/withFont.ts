@@ -1,21 +1,21 @@
-import styled, { StyledComponent } from '@emotion/native';
-import { TextStyle } from 'react-native';
+import styled, { StyledComponent } from "@emotion/native";
+import { TextStyle } from "react-native";
 
 interface FontProps {
-  fontSize?: TextStyle['fontSize'];
-  fontWeight?: TextStyle['fontWeight'];
-  fontStyle?: TextStyle['fontStyle'];
-  fontFamily?: TextStyle['fontFamily'];
-  textAlign?: TextStyle['textAlign'];
-  textDecorationColor?: TextStyle['textDecorationColor'];
-  textDecorationLine?: TextStyle['textDecorationLine'];
-  textDecorationStyle?: TextStyle['textDecorationStyle'];
-  textShadowOffset?: TextStyle['textShadowOffset'];
-  textShadowRadius?: TextStyle['textShadowRadius'];
-  textShadowColor?: TextStyle['textShadowColor'];
-  textTransform?: TextStyle['textTransform'];
-  letterSpacing?: TextStyle['letterSpacing'];
-  lineHeight?: TextStyle['lineHeight'];
+  fontSize?: TextStyle["fontSize"];
+  fontWeight?: TextStyle["fontWeight"];
+  fontStyle?: TextStyle["fontStyle"];
+  fontFamily?: TextStyle["fontFamily"];
+  textAlign?: TextStyle["textAlign"];
+  textDecorationColor?: TextStyle["textDecorationColor"];
+  textDecorationLine?: TextStyle["textDecorationLine"];
+  textDecorationStyle?: TextStyle["textDecorationStyle"];
+  textShadowOffset?: TextStyle["textShadowOffset"];
+  textShadowRadius?: TextStyle["textShadowRadius"];
+  textShadowColor?: TextStyle["textShadowColor"];
+  textTransform?: TextStyle["textTransform"];
+  letterSpacing?: TextStyle["letterSpacing"];
+  lineHeight?: TextStyle["lineHeight"];
 }
 
 const withFont = <T extends object>(
@@ -39,36 +39,36 @@ const withFont = <T extends object>(
     } = props;
     let fontFamily;
     switch (fontWeight) {
-      case '100':
-        fontFamily = 'poppins-thin';
+      case "100":
+        fontFamily = "poppins-thin";
         break;
-      case '200':
-        fontFamily = 'poppins-extra-light';
+      case "200":
+        fontFamily = "poppins-extra-light";
         break;
-      case '300':
-        fontFamily = 'poppins-light';
+      case "300":
+        fontFamily = "poppins-light";
         break;
-      case '400':
-        fontFamily = 'poppins-regular';
+      case "400":
+        fontFamily = "poppins-regular";
         break;
-      case '500':
-        fontFamily = 'poppins-medium';
+      case "500":
+        fontFamily = "poppins-medium";
         break;
-      case '600':
-        fontFamily = 'poppins-semi-bold';
+      case "600":
+        fontFamily = "poppins-semi-bold";
         break;
-      case 'bold':
-      case '700':
-        fontFamily = 'poppins-bold';
+      case "bold":
+      case "700":
+        fontFamily = "poppins-bold";
         break;
-      case '800':
-        fontFamily = 'poppins-extra-bold';
+      case "800":
+        fontFamily = "poppins-extra-bold";
         break;
-      case '900':
-        fontFamily = 'poppins-black';
+      case "900":
+        fontFamily = "poppins-black";
         break;
       default:
-        fontFamily = 'poppins-regular';
+        fontFamily = "poppins-regular";
     }
 
     return {

@@ -1,38 +1,55 @@
-import { FlexStyle } from 'react-native';
-import styled, { StyledComponent, } from '@emotion/native';
+import { FlexStyle } from "react-native";
+import styled, { StyledComponent } from "@emotion/native";
 
 interface FlexProps {
-  flex?: FlexStyle['flex'];
-  direction?: FlexStyle['flexDirection'];
-  align?: FlexStyle['alignItems'];
-  alignS?: FlexStyle['alignSelf'];
-  justify?: FlexStyle['justifyContent'];
-  wrap?: FlexStyle['flexWrap'];
-  place?: 'center'| 'flex-end'| 'flex-start';
-  basis?: FlexStyle['flexBasis'];
+  flex?: FlexStyle["flex"];
+  direction?: FlexStyle["flexDirection"];
+  align?: FlexStyle["alignItems"];
+  alignS?: FlexStyle["alignSelf"];
+  justify?: FlexStyle["justifyContent"];
+  wrap?: FlexStyle["flexWrap"];
+  place?: "center" | "flex-end" | "flex-start";
+  basis?: FlexStyle["flexBasis"];
+  flexGrow?: FlexStyle["flexGrow"];
+  flexShrink?: FlexStyle["flexShrink"];
 }
 
-const withFlex = <T extends object> (Component:StyledComponent<T,any,any>):StyledComponent<T&FlexProps>=>{
-  return styled(Component)(
-      (props:FlexProps)=>{
-      const flexDirection = props.direction;
-      const flexWrap = props.wrap;
-      const alignItems =props.place || props.align;
-      const justifyContent = props.place || props.justify;
-      const alignSelf = props.alignS;
-      const flex = props.flex;
-      const flexBasis = props.basis;
+const withFlex = <T extends object>(
+  Component: StyledComponent<T, any, any>
+): StyledComponent<T & FlexProps> => {
+  return styled(Component)((props: FlexProps) => {
+    const {
+      direction,
+      align,
+      alignS,
+      justify,
+      wrap,
+      place,
+      basis,
+      flex,
+      flexGrow,
+      flexShrink,
+    } = props;
 
-        return {
-          flex,
-          flexBasis,
-          flexDirection,
-          alignSelf,
-          flexWrap,
-          alignItems,
-          justifyContent,
-        }
-      })
-}
+    const flexDirection = direction;
+    const flexWrap = wrap;
+    const alignItems = place || align;
+    const justifyContent = place || justify;
+    const alignSelf = alignS;
+    const flexBasis = basis;
 
-export default withFlex
+    return {
+      flex,
+      flexBasis,
+      flexDirection,
+      alignSelf,
+      flexWrap,
+      alignItems,
+      justifyContent,
+      flexGrow,
+      flexShrink,
+    };
+  });
+};
+
+export default withFlex;

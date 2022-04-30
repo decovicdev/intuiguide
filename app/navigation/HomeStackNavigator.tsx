@@ -1,14 +1,15 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator, TransitionSpecs } from "@react-navigation/stack";
 
-import CreateItinerary from '../screens/home/CreateItinerary';
-import Home from '../screens/home/Home';
-import { HomeStackParamList, RootTabScreenProps } from '../types/navigation';
-import { useHideBottomTabListener } from '../hooks/useHideBottomTab';
+import CreateItinerary from "../screens/home/CreateItinerary";
+import Home from "../screens/home/Home";
+import { HomeStackParamList, RootTabScreenProps } from "../types/navigation";
+import { useHideBottomTabListener } from "../hooks/useHideBottomTab";
 
-const Stack = createNativeStackNavigator<HomeStackParamList>();
+const Stack = createStackNavigator<HomeStackParamList>();
 
-interface HomeStackNavigatorProps extends RootTabScreenProps<'HomeStack'> {}
+interface HomeStackNavigatorProps extends RootTabScreenProps<"HomeStack"> {}
 
 const HomeStackNavigator: React.FC<HomeStackNavigatorProps> = (props) => {
   const { navigation } = props;
@@ -17,11 +18,17 @@ const HomeStackNavigator: React.FC<HomeStackNavigatorProps> = (props) => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        animation: 'slide_from_right',
+        gestureEnabled: true,
+        gestureDirection: "vertical",
+        presentation: "modal",
+        transitionSpec: {
+          open: TransitionSpecs.TransitionIOSSpec,
+          close: TransitionSpecs.TransitionIOSSpec,
+        },
       }}
       screenListeners={(props) => ({
         state: () => {
-          if (props.route.name !== 'Home') {
+          if (props.route.name !== "Home") {
             useHideBottomTabListener(navigation, false);
           } else {
             useHideBottomTabListener(navigation, true);
@@ -29,16 +36,14 @@ const HomeStackNavigator: React.FC<HomeStackNavigatorProps> = (props) => {
         },
       })}
     >
-      <Stack.Screen name='Home' component={Home} />
+      <Stack.Screen name="Home" component={Home} />
       <Stack.Screen
-        name='CreateItinerary'
-        getId={(route) => route.params.currentStep.toString()}
-        options={{
-          animation: 'slide_from_bottom',
-        }}
+        name="CreateItinerary"
+        getId={(route) => route.params?.currentStep.toString()}
         component={CreateItinerary}
       />
     </Stack.Navigator>
   );
 };
+
 export default HomeStackNavigator;

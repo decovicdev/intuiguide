@@ -1,13 +1,13 @@
-import Colors from './Colors';
+import Colors from "./Colors";
 
 const typography = {
   heading: {
     fontSize: 36,
-    fontWeight: '700',
+    fontWeight: "700",
   },
   title: {
     fontSize: 20,
-    fontWeight: '700',
+    fontWeight: "700",
   },
 
   body1: {
@@ -21,7 +21,7 @@ const typography = {
   },
   caption2: {
     fontSize: 12,
-    fontWeight: '300',
+    fontWeight: "300",
   },
 } as const;
 

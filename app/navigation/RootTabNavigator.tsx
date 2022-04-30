@@ -1,23 +1,23 @@
-import React from 'react';
+import React from "react";
 import {
   BottomTabBarProps,
   createBottomTabNavigator,
-} from '@react-navigation/bottom-tabs';
+} from "@react-navigation/bottom-tabs";
 import Animated, {
   Layout,
   SlideInDown,
   SlideOutDown,
-} from 'react-native-reanimated';
+} from "react-native-reanimated";
 
-import { RootTabParamList } from '../types/navigation';
-import HomeStackNavigator from './HomeStackNavigator';
-import ExploreStackNavigator from './ExploreStackNavigator';
-import FavoritesStackNavigator from './FavoriteStackNavigator';
-import ProfileStackNavigator from './ProfileStackNavigator';
-import Button from '../components/shared/button/Button';
-import Card from '../components/shared/Card';
-import { Image } from '../components/shared/image';
-import withClassComponent from '../hoc/withClassComponent';
+import { RootTabParamList } from "../types/navigation";
+import HomeStackNavigator from "./HomeStackNavigator";
+import ExploreStackNavigator from "./ExploreStackNavigator";
+import FavoritesStackNavigator from "./FavoriteStackNavigator";
+import ProfileStackNavigator from "./ProfileStackNavigator";
+import Button from "../components/shared/button/Button";
+import Card from "../components/shared/Card";
+import { Image } from "../components/shared/image";
+import withClassComponent from "../hoc/withClassComponent";
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 const AnimatedCard = Animated.createAnimatedComponent(withClassComponent(Card));
@@ -33,61 +33,61 @@ const RootTabNavigator: React.FC<RootTabNavigatorProps> = (props) => {
       }}
     >
       <Tab.Screen
-        name='HomeStack'
+        name="HomeStack"
         component={HomeStackNavigator}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: "Home",
           tabBarIcon: ({ size, focused }) => (
             <Icon
               size={size}
               focused={focused}
-              focusedSrc={require('../assets/images/home-filled.png')}
-              unfocusedSrc={require('../assets/images/home.png')}
+              focusedSrc={require("../assets/images/home-filled.png")}
+              unfocusedSrc={require("../assets/images/home.png")}
             />
           ),
         }}
       />
       <Tab.Screen
-        name='ExploreStack'
+        name="ExploreStack"
         component={ExploreStackNavigator}
         options={{
-          tabBarLabel: 'Explore',
+          tabBarLabel: "Explore",
           tabBarIcon: ({ size, focused }) => (
             <Icon
               size={size}
               focused={focused}
-              focusedSrc={require('../assets/images/clock-filled.png')}
-              unfocusedSrc={require('../assets/images/clock.png')}
+              focusedSrc={require("../assets/images/clock-filled.png")}
+              unfocusedSrc={require("../assets/images/clock.png")}
             />
           ),
         }}
       />
       <Tab.Screen
-        name='FavoritesStack'
+        name="FavoritesStack"
         component={FavoritesStackNavigator}
         options={{
-          tabBarLabel: 'Favorites',
+          tabBarLabel: "Favorites",
           tabBarIcon: ({ size, focused }) => (
             <Icon
               size={size}
               focused={focused}
-              focusedSrc={require('../assets/images/heart-filled.png')}
-              unfocusedSrc={require('../assets/images/heart.png')}
+              focusedSrc={require("../assets/images/heart-filled.png")}
+              unfocusedSrc={require("../assets/images/heart.png")}
             />
           ),
         }}
       />
       <Tab.Screen
-        name='ProfileStack'
+        name="ProfileStack"
         component={ProfileStackNavigator}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: "Profile",
           tabBarIcon: ({ color, size, focused }) => (
             <Icon
               size={size}
               focused={focused}
-              focusedSrc={require('../assets/images/user-filled.png')}
-              unfocusedSrc={require('../assets/images/user.png')}
+              focusedSrc={require("../assets/images/user-filled.png")}
+              unfocusedSrc={require("../assets/images/user.png")}
             />
           ),
         }}
@@ -106,9 +106,9 @@ const TabBar: React.FC<BottomTabBarProps> = (props) => {
         layout={Layout.springify()}
         entering={SlideInDown.duration(500)}
         exiting={SlideOutDown.duration(500)}
-        direction='row'
-        p='m'
-        m='m'
+        direction="row"
+        p="m"
+        m="m"
         style={{
           elevation: 8,
         }}
@@ -117,12 +117,11 @@ const TabBar: React.FC<BottomTabBarProps> = (props) => {
           const { options } = descriptors[route.key];
 
           const focused = state.index === index;
-          const color = focused ? 'teal' : '#828282';
+          const color = focused ? "teal" : "#828282";
 
           const onPress = () => {
-            console.log('onPress');
             const event = navigation.emit({
-              type: 'tabPress',
+              type: "tabPress",
               target: route.key,
               canPreventDefault: true,
             });
@@ -134,7 +133,7 @@ const TabBar: React.FC<BottomTabBarProps> = (props) => {
 
           const onLongPress = () => {
             navigation.emit({
-              type: 'tabLongPress',
+              type: "tabLongPress",
               target: route.key,
             });
           };
@@ -142,14 +141,14 @@ const TabBar: React.FC<BottomTabBarProps> = (props) => {
           return (
             <Button
               key={route.key}
-              accessibilityRole='button'
+              accessibilityRole="button"
               accessibilityState={focused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
               testID={options.tabBarTestID}
               onPress={onPress}
               onLongPress={onLongPress}
               flex={1}
-              place='center'
+              place="center"
             >
               {options.tabBarIcon?.({
                 focused,

@@ -1,16 +1,17 @@
-import React from 'react';
-import { useThemeColors } from '../../hooks/useThemeColor';
+import createThemedComponent from "../../hoc/createThemedComponent";
+import { useThemeColors } from "../../hooks/useThemeColor";
+import View from "./View";
 
-import View from './View';
+// const Card: React.FC<React.ComponentProps<typeof View>> = (props) => {
+//   const { card } = useThemeColors();
+//   return <View bg={card} borderRadius='l' {...props} />;
+// };
 
-// const Card = styled(View)((props) => ({
-//   // elevation: 2,
-//   // margin: 4,
-// }));
-
-const Card: React.FC<React.ComponentProps<typeof View>> = (props) => {
+const Card = createThemedComponent(View)((props) => {
   const { card } = useThemeColors();
-  return <View bg={card} borderRadius='l' {...props} />;
-};
-
+  return {
+    bg: card,
+    borderRadius: "l",
+  };
+});
 export default Card;
