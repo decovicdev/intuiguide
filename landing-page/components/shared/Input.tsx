@@ -1,12 +1,12 @@
-import { Input as ChakraInput, InputProps } from '@chakra-ui/react';
+import { Input as _Input, InputProps } from "@chakra-ui/input";
 
 const Input: React.FC<InputProps> = (props) => {
   return (
-    <ChakraInput
-      w='full'
-      variant='filled'
-      size='lg'
-      borderRadius='full'
+    <_Input
+      w="full"
+      variant="filled"
+      size="lg"
+      borderRadius="full"
       {...props}
     />
   );

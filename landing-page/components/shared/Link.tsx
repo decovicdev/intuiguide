@@ -1,7 +1,7 @@
-import { Link as ChakraLink, LinkProps } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Link as ChakraLink, LinkProps } from "@chakra-ui/react";
+import NextLink from "next/link";
 
-import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
+import fixSrcWithBasePath from "../../utils/fixSrcWithBasePath";
 
 const Link: React.FC<LinkProps> = (props) => {
   let { href, ...rest } = props;

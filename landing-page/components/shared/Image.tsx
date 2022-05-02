@@ -1,16 +1,16 @@
-import { ImageProps, Image as ChakraImage } from '@chakra-ui/react';
+import { ImageProps, Image as ChakraImage } from "@chakra-ui/image";
 
-import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
+import fixSrcWithBasePath from "../../utils/fixSrcWithBasePath";
 
 const Image: React.FC<ImageProps> = (props) => {
-  let { w, h, loading = 'lazy', src, ...rest } = props;
+  let { w, h, loading = "lazy", src, ...rest } = props;
 
   src = fixSrcWithBasePath(src);
 
-  if (typeof w === 'number') {
+  if (typeof w === "number") {
     w = `${w}px`;
   }
-  if (typeof h === 'number') {
+  if (typeof h === "number") {
     h = `${h}px`;
   }
 

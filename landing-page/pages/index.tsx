@@ -1,23 +1,16 @@
-import { Box } from '@chakra-ui/react';
-import type { NextPage } from 'next';
+import Head from "next/head";
+import type { NextPage } from "next";
 
-import Hero from '../components/shared/Hero';
-import Section1 from '../components/home/Section1';
-import Section2 from '../components/home/Section2';
-import Section3 from '../components/home/Section3';
-import Section4 from '../components/home/Section4';
-import Section5 from '../components/home/Section5';
+import HomePage from "../components/containers/home-page";
 
 const Home: NextPage = () => {
   return (
-    <Box overflowX='hidden'>
-      <Hero />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-    </Box>
+    <>
+      <Head>
+        <title>intuiguide | Home</title>
+      </Head>
+      <HomePage />
+    </>
   );
 };
 

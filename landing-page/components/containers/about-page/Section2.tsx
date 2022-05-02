@@ -1,21 +1,21 @@
-import { Container, VStack } from '@chakra-ui/react';
+import { Container, VStack } from "@chakra-ui/react";
 
-import fixSrcWithBasePath from '../../utils/fixSrcWithBasePath';
-import FadeIn from '../shared/FadeIn';
-import Image from '../shared/Image';
-import Stack from '../shared/Stack';
-import { Body1, Heading } from '../shared/typography';
+import fixSrcWithBasePath from "../../../utils/fixSrcWithBasePath";
+import FadeIn from "../../shared/FadeIn";
+import Image from "../../shared/Image";
+import Stack from "../../shared/Stack";
+import { Body1, Heading } from "../../shared/typography";
 
 interface Section2Props {}
 
 const Section2: React.FC<Section2Props> = (props) => {
   return (
-    <Container maxW='1320px' p='0' my='40' mr='0'>
+    <Container maxW="1320px" p="0" my="40" mr="0">
       <FadeIn>
-        <Stack spacing='0'>
-          <VStack align='flex-start' spacing='8' p='4'>
-            <Heading maxW='500px'>Pssst...Here is about our company</Heading>
-            <Body1 color='gray' maxW='670px'>
+        <Stack spacing="0">
+          <VStack align="flex-start" spacing="8" p="4">
+            <Heading maxW="500px">Pssst...Here is about our company</Heading>
+            <Body1 color="gray" maxW="670px">
               When it comes to car travel, the quickest route to your end
               destination isn’t necessarily the best route. Speed might be a
               factor when you’re running late for a business meeting or driving
@@ -45,7 +45,7 @@ const Section2: React.FC<Section2Props> = (props) => {
               <br />
             </Body1>
           </VStack>
-          <Image src='/images/water.png' alt='water' />
+          <Image src="/images/water.png" alt="water" />
         </Stack>
       </FadeIn>
     </Container>

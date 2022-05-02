@@ -1,18 +1,17 @@
-import { Box } from '@chakra-ui/react';
+import Head from "next/head";
 
-import Section1 from '../components/about/Section1';
-import Section2 from '../components/about/Section2';
-import Section5 from '../components/home/Section5';
+import AboutPage from "../components/containers/about-page";
 
 interface aboutProps {}
 
-const about: React.FC<aboutProps> = (props) => {
+const About: React.FC<aboutProps> = (props) => {
   return (
-    <Box>
-      <Section1 />
-      <Section2 />
-      <Section5 />
-    </Box>
+    <>
+      <Head>
+        <title>intuiguide | About</title>
+      </Head>
+      <AboutPage />
+    </>
   );
 };
-export default about;
+export default About;
