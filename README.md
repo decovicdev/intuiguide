@@ -11,7 +11,6 @@ the design includes:
 
 #### Landing page
 
-the image below show the landing page
 
 #### Mobile app
 
